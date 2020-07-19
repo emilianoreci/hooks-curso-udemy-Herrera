@@ -1,0 +1,33 @@
+Memo De React
+
+Ejemplo 1
+Hay un componente "padre" llamado Memorize, y en él hay un componente "hijo" llamado Small, el cual muestra 
+el valor del contador.
+Notese que si el padre se renderiza y el hijo no cambia el valor del contador, el hijo no deberia renderizarse.
+En este caso se engloba el componente Small con React.memo.
+
+
+Ejemplo 2
+Componentes:
+    MemoHook 
+    La funcion procesoPesado en helpers
+
+procesoPesado: es una fn que recibe un numero, que seria el del contador y retorna la cantidad de iteracciones.
+Al clickear el btn de aumentarContador se debe renderizar, pero al clickear el btn show/hide no debe renderizarse.
+Por eso el uso del hook memo.
+
+
+Ejemplo 3 memo y useCallback
+
+Componentes:
+    CallbackHook
+    ShowIncrement
+
+ShowIncrement: recibe por props una fn, tiene un boton que al clickearse llama a esa fn recibida por props.
+    Además esta englobada con React.memo
+
+CallbackHook: Contiene al componente ShowIncrement y la logica del btn que esta en ShowIncrement.
+    Dicha logica en vez de ponerla en una fn, se pone dentro de useCallback, para indicar que si el 
+    componente padre se modifica, pero la fn increment no, la memoriza y no la vuelve crear.
+
+

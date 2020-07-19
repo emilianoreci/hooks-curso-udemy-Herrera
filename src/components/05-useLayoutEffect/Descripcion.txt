@@ -1,0 +1,2 @@
+Suele usarse cuando se necesita saber por ejemplo las medidas de un div que se modifica 
+dinamicamente su contenido.
